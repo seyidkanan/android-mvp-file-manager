@@ -2,7 +2,6 @@ package az.seyidkanan.filemanagerapp.dir_activity;
 
 import android.content.Context;
 
-import java.io.File;
 import java.util.List;
 
 import az.seyidkanan.filemanagerapp.BasePresenter;
@@ -22,6 +21,8 @@ public interface DirContracter {
 
         void hideProgress();
 
+        void customOnBackPress();
+
     }
 
     interface Model {
@@ -37,6 +38,10 @@ public interface DirContracter {
         void onDirClick(DirPojo file);
 
         void showFileList();
+
+        void onBackPressed();
+
+        void addRootDirToSP();
 
     }
 

@@ -2,4 +2,5 @@
     <string name="app_name">FileManager App</string>
     <string name="empty_dir">Empty Directory</string>
     <string name="this_is_file">This is file</string>
+    <string name="const_sp_name">FILE_MANAGER_APP</string>
 </resources>

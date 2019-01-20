@@ -1,8 +1,9 @@
 package az.seyidkanan.filemanagerapp.pojo;
 
 import java.io.File;
+import java.io.Serializable;
 
-public class DirPojo {
+public class DirPojo implements Serializable {
 
     private String name;
     private String date;
@@ -77,9 +78,13 @@ public class DirPojo {
         return "DirPojo{" +
                 "name='" + name + '\'' +
                 ", date='" + date + '\'' +
-                ", length='" + length + '\'' +
+                ", length=" + length +
                 ", isDirectory=" + isDirectory +
                 ", isFile=" + isFile +
+                ", absolutePath='" + absolutePath + '\'' +
+                ", parentPath='" + parentPath + '\'' +
                 '}';
     }
+
+
 }

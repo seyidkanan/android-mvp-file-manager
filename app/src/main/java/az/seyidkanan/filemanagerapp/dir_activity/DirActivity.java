@@ -32,11 +32,14 @@ public class DirActivity extends AppCompatActivity implements DirContracter.View
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         progressBar = findViewById(R.id.progress_circular);
 
         initAdapter();
         new DirPresenter(this);
         presenter.showFileList();
+
+        presenter.addRootDirToSP();
     }
 
     private void initAdapter() {
@@ -82,12 +85,18 @@ public class DirActivity extends AppCompatActivity implements DirContracter.View
     }
 
     @Override
+    public void customOnBackPress() {
+        super.onBackPressed();
+    }
+
+    @Override
     public void setPresenter(DirContracter.Presenter presenter) {
         this.presenter = presenter;
     }
 
     @Override
     public void onBackPressed() {
-
+        presenter.onBackPressed();
     }
+
 }
